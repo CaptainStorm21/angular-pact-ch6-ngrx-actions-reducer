@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//step 1 + line 18
+import { StoreModule } from '@ngrx/store';
+// step 8
+import * as appStore from './store/app.reducer';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -13,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({ app: appStore.reducer })
   ],
   providers: [],
   bootstrap: [AppComponent],
